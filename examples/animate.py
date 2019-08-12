@@ -31,8 +31,8 @@ from PIL import ImageDraw
 
 
 # Raspberry Pi hardware SPI config:
-DC = 23
-RST = 24
+DC = 27
+RST = 23
 SPI_PORT = 0
 SPI_DEVICE = 0
 
