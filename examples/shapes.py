@@ -80,16 +80,18 @@ draw.rectangle((24,2,44,22), outline=0, fill=255)
 draw.polygon([(46,22), (56,2), (66,22)], outline=0, fill=255)
 draw.line((68,22,81,2), fill=0)
 draw.line((68,2,81,22), fill=0)
+font = ImageFont.truetype("PeanutMoney.ttf", 16)
+draw.text((5,15), 'Zhang', font=font)
+font2 = ImageFont.truetype('SPAIDERS.TTF', 20)
+draw.text((60,15), 'z', font=font2)
+draw.text((70,15), 'wu', font=font)
 
 # Load default font.
 font = ImageFont.load_default()
 
 # Alternatively load a TTF font.
 # Some nice fonts to try: http://www.dafont.com/bitmap.php
-font = ImageFont.truetype('SPAIDERS.TTF', 20)
 
-# Write some text.
-draw.text((8,30), 'xyz', font=font)
 
 # Display image.
 disp.image(image)
