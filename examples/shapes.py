@@ -86,10 +86,10 @@ font = ImageFont.load_default()
 
 # Alternatively load a TTF font.
 # Some nice fonts to try: http://www.dafont.com/bitmap.php
-# font = ImageFont.truetype('Minecraftia.ttf', 8)
+font = ImageFont.truetype('SPAIDERS.TTF', 20)
 
 # Write some text.
-draw.text((8,30), 'Hello World!', font=font)
+draw.text((8,30), 'xyz', font=font)
 
 # Display image.
 disp.image(image)
