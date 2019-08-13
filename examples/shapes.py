@@ -81,7 +81,7 @@ font2 = ImageFont.truetype('SPAIDERS.TTF', 20)
 draw.text((45,15), 'z', font=font2)
 draw.text((70,15), 'Wu', font=font)
 
-draw.font((30,26), "forever", font=font)
+draw.text((30,26), "forever", font=font)
 
 # Load default font.
 font = ImageFont.load_default()
