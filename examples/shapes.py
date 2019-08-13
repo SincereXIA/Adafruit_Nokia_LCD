@@ -75,16 +75,13 @@ draw = ImageDraw.Draw(image)
 draw.rectangle((0,0,LCD.LCDWIDTH,LCD.LCDHEIGHT), outline=255, fill=255)
 
 # Draw some shapes.
-draw.ellipse((2,2,22,22), outline=0, fill=255)
-draw.rectangle((24,2,44,22), outline=0, fill=255)
-draw.polygon([(46,22), (56,2), (66,22)], outline=0, fill=255)
-draw.line((68,22,81,2), fill=0)
-draw.line((68,2,81,22), fill=0)
 font = ImageFont.truetype("PeanutMoney.ttf", 16)
 draw.text((5,15), 'Zhang', font=font)
 font2 = ImageFont.truetype('SPAIDERS.TTF', 20)
-draw.text((60,15), 'z', font=font2)
-draw.text((70,15), 'wu', font=font)
+draw.text((45,15), 'z', font=font2)
+draw.text((70,15), 'Wu', font=font)
+
+draw.font((30,26), "forever", font=font)
 
 # Load default font.
 font = ImageFont.load_default()
