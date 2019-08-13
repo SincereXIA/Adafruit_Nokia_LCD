@@ -68,32 +68,44 @@ disp.display()
 # Make sure to create image with mode '1' for 1-bit color.
 image = Image.new('1', (LCD.LCDWIDTH, LCD.LCDHEIGHT))
 
-# Get drawing object to draw on image.
-draw = ImageDraw.Draw(image)
-
-# Draw a white filled box to clear the image.
-draw.rectangle((0,0,LCD.LCDWIDTH,LCD.LCDHEIGHT), outline=255, fill=255)
-
-# Draw some shapes.
-font = ImageFont.truetype("PeanutMoney.ttf", 16)
-draw.text((5,15), 'Zhang', font=font)
-font2 = ImageFont.truetype('SPAIDERS.TTF', 20)
-draw.text((45,15), 'z', font=font2)
-draw.text((70,15), 'Wu', font=font)
-
-draw.text((30,26), "forever", font=font)
-
-# Load default font.
-font = ImageFont.load_default()
-
-# Alternatively load a TTF font.
-# Some nice fonts to try: http://www.dafont.com/bitmap.php
-
-
-# Display image.
-disp.image(image)
-disp.display()
-
-print('Press Ctrl-C to quit.')
+forever_pos = 30
+love_pos = 15
+is_up = 1
 while True:
-    time.sleep(1.0)
+
+    forever_pos = forever_pos - 1
+    if forever_pos < -30:
+        forever_pos = 83
+
+    love_pos = love_pos - is_up
+    if love_pos < 12:
+        is_up = -1
+    if love_pos > 14:
+        is_up = 1
+
+    # Get drawing object to draw on image.
+    draw = ImageDraw.Draw(image)
+
+    # Draw a white filled box to clear the image.
+    draw.rectangle((0,0,LCD.LCDWIDTH,LCD.LCDHEIGHT), outline=255, fill=255)
+
+    # Draw some shapes.
+    font = ImageFont.truetype("PeanutMoney.ttf", 16)
+    draw.text((5,15), 'Zhang', font=font)
+    font2 = ImageFont.truetype('SPAIDERS.TTF', 20)
+    draw.text((42,love_pos), 'z', font=font2)
+    draw.text((60,15), 'Wu', font=font)
+
+    draw.text((forever_pos,26), "forever", font=font)
+
+    # Load default font.
+    font = ImageFont.load_default()
+
+    # Alternatively load a TTF font.
+    # Some nice fonts to try: http://www.dafont.com/bitmap.php
+
+
+    # Display image.
+    disp.image(image)
+    disp.display()
+    time.sleep(0.1)
