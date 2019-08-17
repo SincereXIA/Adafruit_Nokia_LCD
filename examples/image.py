@@ -61,10 +61,10 @@ disp.clear()
 disp.display()
 
 # Load image and convert to 1 bit color.
-image = Image.open('happycat_lcd.ppm').convert('1')
+#image = Image.open('pig.jpg').convert('1')
 
 # Alternatively load a different format image, resize it, and convert to 1 bit color.
-#image = Image.open('happycat.png').resize((LCD.LCDWIDTH, LCD.LCDHEIGHT), Image.ANTIALIAS).convert('1')
+image = Image.open('pig.png').resize((LCD.LCDWIDTH, LCD.LCDHEIGHT), Image.ANTIALIAS).convert('1')
 
 # Display image.
 disp.image(image)
